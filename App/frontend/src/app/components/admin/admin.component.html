@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <h2>Korisnički zahtevi za kreiranje naloga</h2>
+    <hr />
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th>Korisničko ime</th>
+          <th>Tip korisnika</th>
+          <th>Zahtev</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of allUsers" class="text">
+          <ng-container *ngIf="!user.approved">
+            <td>{{ user.username }}</td>
+            <td>
+              <span *ngIf="user.userType === 0">Administrator</span>
+              <span *ngIf="user.userType === 1">Rekreativac</span>
+              <span *ngIf="user.userType === 2">Učenik</span>
+              <span *ngIf="user.userType === 3">Trener</span>
+            </td>
+
+            <td>
+              <button class="btn btn-success" (click)="accept(user)">
+                Prihvati
+              </button>
+              <button class="btn btn-danger" (click)="reject(user)">
+                Odbi
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
