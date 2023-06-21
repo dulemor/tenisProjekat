@@ -55,3 +55,9 @@ CREATE TABLE `users` (
   UNIQUE KEY `telephoneNumber_UNIQUE` (`telephoneNumber`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+INSERT INTO `tennisclub`.`users` (`id`, `username`, `password`, `name`, `surname`, `telephoneNumber`, `userType`, `approved`) VALUES ('1', 'admin', 'admin', 'admin', 'admin', '381659219261', '0', '1');
+INSERT INTO `tennisclub`.`users` (`id`, `username`, `password`, `name`, `surname`, `telephoneNumber`, `userType`, `approved`) VALUES ('6', 'mika', 'mika123', 'mika', 'mikic', '1234', '1', '0');
+INSERT INTO `tennisclub`.`users` (`id`, `username`, `password`, `name`, `surname`, `telephoneNumber`, `userType`, `approved`) VALUES ('7', 'đoka', 'mika123', 'mika', 'mikic', '12345', '1', '0');
+INSERT INTO `tennisclub`.`users` (`id`, `username`, `password`, `name`, `surname`, `telephoneNumber`, `userType`, `approved`) VALUES ('8', 'joka', 'mika123', 'mika', 'mikic', '123456', '1', '0');
+INSERT INTO `tennisclub`.`users` (`id`, `username`, `password`, `name`, `surname`, `telephoneNumber`, `userType`, `approved`) VALUES ('9', 'lol', 'lol', 'lol', 'lol', '1', '0', '0');
+
