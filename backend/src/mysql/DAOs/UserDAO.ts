@@ -25,19 +25,7 @@ class UserDAO {
       user.telephoneNumber,
       user.userType,
     ];
-
-    try {
-      await this.getUser(user.username);
-    } catch (error) {
-      console.log("Error occurred:", error);
-      dbConnection.query(sqlQuery, queryVar, function (err, rows) {
-        if (err) {
-          console.log("Failed to register user:", err);
-        } else {
-          console.log("User registered successfully");
-        }
-      });
-    }
+    dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
   }
 
   async getUser(username: string): Promise<User | null> {

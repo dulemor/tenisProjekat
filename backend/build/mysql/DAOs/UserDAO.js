@@ -38,20 +38,7 @@ class UserDAO {
                 user.telephoneNumber,
                 user.userType,
             ];
-            try {
-                yield this.getUser(user.username);
-            }
-            catch (error) {
-                console.log("Error occurred:", error);
-                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
-                    if (err) {
-                        console.log("Failed to register user:", err);
-                    }
-                    else {
-                        console.log("User registered successfully");
-                    }
-                });
-            }
+            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
     getUser(username) {
