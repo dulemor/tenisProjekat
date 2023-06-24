@@ -29,11 +29,7 @@ export class RegisterComponent implements OnInit {
     user.telephoneNumber = this.telephoneNumber;
     user.userType = this.userType;
     user.approved = false;
-    try {
-      this.userService.register(user);
-      this.router.navigate(['/registerSuccess']);
-    } catch (error) {
-      alert('error');
-    }
+    this.userService.register(user);
+    this.router.navigate(['/registerSuccess']);
   }
 }

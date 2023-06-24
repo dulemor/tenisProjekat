@@ -29,7 +29,12 @@ let UserController = class UserController extends tsoa_1.Controller {
     }
     register(user) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield UserDAO_1.userDAO.register(user);
+            const result = yield UserDAO_1.userDAO.register(user);
+            if (result)
+                this.setStatus(200);
+            else
+                this.setStatus(500);
+            return result;
         });
     }
     getUser(username) {
@@ -58,6 +63,8 @@ __decorate([
     __param(0, (0, tsoa_1.Body)())
 ], UserController.prototype, "login", null);
 __decorate([
+    (0, tsoa_1.Response)("500", "Registracija nije uspela"),
+    (0, tsoa_1.SuccessResponse)("200", "Registracija uspela"),
     (0, tsoa_1.Post)("register"),
     __param(0, (0, tsoa_1.Body)())
 ], UserController.prototype, "register", null);

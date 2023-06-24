@@ -14,18 +14,23 @@ class UserDAO {
     });
   }
 
-  async register(user: User) {
-    var sqlQuery =
-      "insert into users (username, password, name, surname, telephoneNumber, userType, approved) values (?,?,?,?,?,?,0)";
-    var queryVar = [
-      user.username,
-      user.password,
-      user.name,
-      user.surname,
-      user.telephoneNumber,
-      user.userType,
-    ];
-    dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
+  async register(user: User): Promise<Boolean> {
+    return new Promise((resolve, rject) => {
+      var sqlQuery =
+        "insert into users (username, password, name, surname, telephoneNumber, userType, approved) values (?,?,?,?,?,?,0)";
+      var queryVar = [
+        user.username,
+        user.password,
+        user.name,
+        user.surname,
+        user.telephoneNumber,
+        user.userType,
+      ];
+      dbConnection.query(sqlQuery, queryVar, function (err, rows) {
+        if (err) resolve(false);
+        else resolve(true);
+      });
+    });
   }
 
   async getUser(username: string): Promise<User | null> {

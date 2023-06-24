@@ -8,6 +8,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
 import { CourtsComponent } from './components/courts/courts.component';
 import { RegisterSuccessComponent } from './components/register-success/register-success.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'registerSuccess', component: RegisterSuccessComponent },
+  { path: 'contact', component: ContactComponent },
 ];
 
 @NgModule({

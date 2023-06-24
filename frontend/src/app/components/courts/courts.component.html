@@ -1,1 +1,21 @@
-<p>courts works!</p>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6 text-center">
+    <h2>Tereni</h2>
+    <hr />
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th>Ime terena</th>
+          <th>Tip terena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let court of allCourts" class="text">
+          <td>{{ court.courtName }}</td>
+          <td>{{ court.courtType }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

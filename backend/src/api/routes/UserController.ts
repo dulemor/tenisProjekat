@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, Path, Post, Route } from "tsoa";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Path,
+  Post,
+  Route,
+  Response,
+  SuccessResponse,
+} from "tsoa";
 import { User } from "../../mysql/models/User";
 import { userDAO } from "../../mysql/DAOs/UserDAO";
 
@@ -9,9 +19,14 @@ export class UserController extends Controller {
     return await userDAO.login(user.username, user.password);
   }
 
+  @Response("500", "Registracija nije uspela")
+  @SuccessResponse("200", "Registracija uspela")
   @Post("register")
   async register(@Body() user: User) {
-    return await userDAO.register(user);
+    const result = await userDAO.register(user);
+    if (result) this.setStatus(200);
+    else this.setStatus(500);
+    return result;
   }
 
   @Get("getUser/{username}")

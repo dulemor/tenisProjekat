@@ -29,16 +29,23 @@ class UserDAO {
     }
     register(user) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "insert into users (username, password, name, surname, telephoneNumber, userType, approved) values (?,?,?,?,?,?,0)";
-            var queryVar = [
-                user.username,
-                user.password,
-                user.name,
-                user.surname,
-                user.telephoneNumber,
-                user.userType,
-            ];
-            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+            return new Promise((resolve, rject) => {
+                var sqlQuery = "insert into users (username, password, name, surname, telephoneNumber, userType, approved) values (?,?,?,?,?,?,0)";
+                var queryVar = [
+                    user.username,
+                    user.password,
+                    user.name,
+                    user.surname,
+                    user.telephoneNumber,
+                    user.userType,
+                ];
+                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
+                    if (err)
+                        resolve(false);
+                    else
+                        resolve(true);
+                });
+            });
         });
     }
     getUser(username) {

@@ -13,9 +13,10 @@ import { CourtsComponent } from './components/courts/courts.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { RegisterSuccessComponent } from './components/register-success/register-success.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, AdminComponent, HomeComponent, CourtsComponent, TrainersComponent, PricingComponent, RegisterSuccessComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, AdminComponent, HomeComponent, CourtsComponent, TrainersComponent, PricingComponent, RegisterSuccessComponent, ContactComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
