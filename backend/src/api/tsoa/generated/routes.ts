@@ -155,9 +155,9 @@ export function RegisterRoutes(app: express.Router) {
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/users/getAll',
             ...(fetchMiddlewares<RequestHandler>(UserController)),
-            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.getAllBooks)),
+            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.getAllUsers)),
 
-            function UserController_getAllBooks(request: any, response: any, next: any) {
+            function UserController_getAllUsers(request: any, response: any, next: any) {
             const args = {
             };
 
@@ -170,7 +170,7 @@ export function RegisterRoutes(app: express.Router) {
                 const controller = new UserController();
 
 
-              const promise = controller.getAllBooks.apply(controller, validatedArgs as any);
+              const promise = controller.getAllUsers.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
@@ -179,9 +179,9 @@ export function RegisterRoutes(app: express.Router) {
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.delete('/users/deleteUser/:username',
             ...(fetchMiddlewares<RequestHandler>(UserController)),
-            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.deleteBook)),
+            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.deleteUser)),
 
-            function UserController_deleteBook(request: any, response: any, next: any) {
+            function UserController_deleteUser(request: any, response: any, next: any) {
             const args = {
                     username: {"in":"path","name":"username","required":true,"dataType":"string"},
             };
@@ -195,7 +195,7 @@ export function RegisterRoutes(app: express.Router) {
                 const controller = new UserController();
 
 
-              const promise = controller.deleteBook.apply(controller, validatedArgs as any);
+              const promise = controller.deleteUser.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
@@ -204,9 +204,9 @@ export function RegisterRoutes(app: express.Router) {
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.post('/users/approveUser',
             ...(fetchMiddlewares<RequestHandler>(UserController)),
-            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.editBook)),
+            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.approveUser)),
 
-            function UserController_editBook(request: any, response: any, next: any) {
+            function UserController_approveUser(request: any, response: any, next: any) {
             const args = {
                     username: {"in":"body","name":"username","required":true,"dataType":"string"},
             };
@@ -220,7 +220,7 @@ export function RegisterRoutes(app: express.Router) {
                 const controller = new UserController();
 
 
-              const promise = controller.editBook.apply(controller, validatedArgs as any);
+              const promise = controller.approveUser.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

@@ -35,17 +35,17 @@ export class UserController extends Controller {
   }
 
   @Get("getAll")
-  async getAllBooks() {
+  async getAllUsers() {
     return await userDAO.getAllUsers();
   }
 
   @Delete("deleteUser/{username}")
-  async deleteBook(@Path() username: string) {
+  async deleteUser(@Path() username: string) {
     return await userDAO.deleteUser(username);
   }
 
   @Post("approveUser")
-  async editBook(@Body() username: string) {
+  async approveUser(@Body() username: string) {
     return await userDAO.approveUser(username);
   }
 }

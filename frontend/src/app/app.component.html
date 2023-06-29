@@ -16,6 +16,11 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="pricing">Cenovnik</a>
     </li>
+    <ng-template [ngIf]="logged">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="appointments">Termini</a>
+      </li>
+    </ng-template>
     <li class="nav-item">
       <a class="nav-link" routerLink="contact">Kontakt</a>
     </li>

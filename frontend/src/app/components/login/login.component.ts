@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
           if (user.userType == 0) {
             this.router.navigate(['admin']);
           } else {
-            this.router.navigate(['']);
+            this.router.navigate(['home']);
           }
         } else {
           alert(this.username);

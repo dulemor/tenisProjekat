@@ -42,17 +42,17 @@ let UserController = class UserController extends tsoa_1.Controller {
             return yield UserDAO_1.userDAO.getUser(username);
         });
     }
-    getAllBooks() {
+    getAllUsers() {
         return __awaiter(this, void 0, void 0, function* () {
             return yield UserDAO_1.userDAO.getAllUsers();
         });
     }
-    deleteBook(username) {
+    deleteUser(username) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield UserDAO_1.userDAO.deleteUser(username);
         });
     }
-    editBook(username) {
+    approveUser(username) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield UserDAO_1.userDAO.approveUser(username);
         });
@@ -74,15 +74,15 @@ __decorate([
 ], UserController.prototype, "getUser", null);
 __decorate([
     (0, tsoa_1.Get)("getAll")
-], UserController.prototype, "getAllBooks", null);
+], UserController.prototype, "getAllUsers", null);
 __decorate([
     (0, tsoa_1.Delete)("deleteUser/{username}"),
     __param(0, (0, tsoa_1.Path)())
-], UserController.prototype, "deleteBook", null);
+], UserController.prototype, "deleteUser", null);
 __decorate([
     (0, tsoa_1.Post)("approveUser"),
     __param(0, (0, tsoa_1.Body)())
-], UserController.prototype, "editBook", null);
+], UserController.prototype, "approveUser", null);
 UserController = __decorate([
     (0, tsoa_1.Route)("users")
 ], UserController);

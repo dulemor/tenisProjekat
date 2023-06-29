@@ -13,6 +13,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  failedRegister: boolean = false;
+
   username: string = '';
   password: string = '';
   name: string = '';
@@ -29,7 +31,13 @@ export class RegisterComponent implements OnInit {
     user.telephoneNumber = this.telephoneNumber;
     user.userType = this.userType;
     user.approved = false;
-    this.userService.register(user);
-    this.router.navigate(['/registerSuccess']);
+    this.userService
+      .register(user)
+      .then((resp) => {
+        this.router.navigate(['/registerSuccess']);
+      })
+      .catch(() => {
+        this.failedRegister = true;
+      });
   }
 }
